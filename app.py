@@ -14,7 +14,7 @@ mongo = client.get_database("Intern")
 interns = mongo.Intern
 tasks = mongo.tasks
 attendance = mongo.attendance
-@app.route('/interns', methods=['POST'])
+@app.route('/internal', methods=['POST'])
 def create_intern():
     data = request.json
     result = interns.insert_one({'name': data['name']})
