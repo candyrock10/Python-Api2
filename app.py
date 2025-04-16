@@ -20,7 +20,7 @@ def create_intern():
     result = interns.insert_one({'name': data['name']})
     intern_id = str(result.inserted_id)
     return jsonify({'message': 'Intern created successfully', 'intern_id': intern_id})
-@app.route('/attendance/in', methods=['POST'])
+@app.route('/present/in', methods=['POST'])
 def mark_time_in():
     data = request.json
     attendance.insert_one({
@@ -65,5 +65,7 @@ def assign_task():
     return jsonify({'message': 'Task assigned'})
 
 # my name is rohit
+#this is my first commit
+#  
 if __name__ == '__main__':
     app.run(debug=True)
