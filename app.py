@@ -14,13 +14,13 @@ mongo = client.get_database("Intern")
 interns = mongo.Intern
 tasks = mongo.tasks
 attendance = mongo.attendance
-@app.route('/interns', methods=['POST'])
+@app.route('/rohit', methods=['POST'])
 def create_intern():
     data = request.json
     result = interns.insert_one({'name': data['name']})
     intern_id = str(result.inserted_id)
     return jsonify({'message': 'Intern created successfully', 'intern_id': intern_id})
-@app.route('/attendance/in', methods=['POST'])
+@app.route('/aya-he/in', methods=['POST'])
 def mark_time_in():
     data = request.json
     attendance.insert_one({
